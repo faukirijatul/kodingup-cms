@@ -1,7 +1,21 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   --font-sans: Inter, Roboto, Helvetica, Arial, sans-serif;
+
+  --color-white-primary: #fafafa;
+  --color-white: #ffffff;
+  --color-muted: #71717b;
+  --color-muted-alpha: #71717bb2;
+  --color-red: #e7000b;
+  --color-green: #00c950;
+  --color-blue: #155dfc;
+  --color-dark: #27272a;
+
+  --color-bg-primary: #09090b;
+  --color-bg-secondary: #18181b;
+
+  --color-skeleton: #e4e4e4;
 
   --radius-xs: 2px;
   --radius-sm: 4px;
