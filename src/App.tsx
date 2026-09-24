@@ -1,6 +1,11 @@
+import { Toaster } from 'sonner';
+import { QueryProvider } from './providers/QueryProvider';
+
 export function App() {
-
-  return <div className="text-blue-400">Hello World</div>
+  return (
+    <QueryProvider>
+      <div>Test</div>
+      <Toaster theme="dark" position="bottom-right" richColors closeButton />
+    </QueryProvider>
+  );
 }
-
-export default App
