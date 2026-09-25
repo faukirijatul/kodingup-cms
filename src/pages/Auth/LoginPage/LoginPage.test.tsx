@@ -48,10 +48,6 @@ const renderLoginPage = (initialPath = '/login') => {
 };
 
 describe('LoginPage Integration', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   describe('GuestRoute Guard Protection', () => {
     it('redirects to /students if the user is authenticated', () => {
       const mockUser = {

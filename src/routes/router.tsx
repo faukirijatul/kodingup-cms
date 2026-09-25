@@ -3,6 +3,8 @@ import { LoginPage } from '@/pages/Auth/LoginPage';
 import { StudentsPage } from '@/pages/StudentsPage';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { GuestRoute } from './components/GuestRoute';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { DashboardLayout } from '@/layouts/DashboardLayout';
 
 export function AppRouter() {
   return (
@@ -14,9 +16,13 @@ export function AppRouter() {
           </Route>
         </Route>
 
-        <Route index element={<Navigate to="/students" replace />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<DashboardLayout />}>
+            <Route index element={<Navigate to="/students" replace />} />
 
-        <Route path="/students" element={<StudentsPage />} />
+            <Route path="students" element={<StudentsPage />} />
+          </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -12,3 +12,8 @@ export const loginSchema = z.object({
 });
 
 export type LoginFormValues = z.infer<typeof loginSchema>;
+
+export const DEFAULT_LOGIN_FORM_VALUES: LoginFormValues = {
+  email: '',
+  password: '',
+};

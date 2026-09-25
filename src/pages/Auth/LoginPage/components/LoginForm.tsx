@@ -3,7 +3,11 @@ import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { toast } from 'sonner';
-import { loginSchema, type LoginFormValues } from '@/schemas/auth';
+import {
+  DEFAULT_LOGIN_FORM_VALUES,
+  loginSchema,
+  type LoginFormValues,
+} from '@/schemas/auth';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -20,10 +24,7 @@ export function LoginForm() {
     formState: { errors },
   } = useForm<LoginFormValues>({
     resolver: zodResolver(loginSchema),
-    defaultValues: {
-      email: '',
-      password: '',
-    },
+    defaultValues: DEFAULT_LOGIN_FORM_VALUES,
   });
 
   const { mutate, isPending } = useMutation({

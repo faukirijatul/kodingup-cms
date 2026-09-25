@@ -11,10 +11,6 @@ vi.mock('./FullPageLoader', () => ({
 const mockedUseCurrentUser = vi.mocked(useCurrentUser);
 
 describe('GuestRoute Component', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('renders FullPageLoader when authentication state is loading', () => {
     mockedUseCurrentUser.mockReturnValue({
       data: undefined,
