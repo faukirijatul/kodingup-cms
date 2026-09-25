@@ -5,6 +5,9 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { GuestRoute } from './components/GuestRoute';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { DashboardLayout } from '@/layouts/DashboardLayout';
+import { CoursesPage } from '@/pages/Course/CoursesPage';
+import { CourseDetailPage } from '@/pages/Course/CourseDetailPage';
+import { SectionDetailPage } from '@/pages/SectionDetailPage';
 
 export function AppRouter() {
   return (
@@ -21,6 +24,15 @@ export function AppRouter() {
             <Route index element={<Navigate to="/students" replace />} />
 
             <Route path="students" element={<StudentsPage />} />
+
+            <Route path="courses">
+              <Route index element={<CoursesPage />} />
+              <Route path=":courseId" element={<CourseDetailPage />} />
+              <Route
+                path=":courseId/sections/:sectionPosition"
+                element={<SectionDetailPage />}
+              />
+            </Route>
           </Route>
         </Route>
       </Routes>

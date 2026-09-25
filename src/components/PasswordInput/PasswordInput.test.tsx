@@ -1,7 +1,7 @@
 import { createRef } from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { PasswordInput } from './PasswordInput';
+import { PasswordInput } from '../PasswordInput';
 
 describe('PasswordInput Component', () => {
   it('renders input with type="password" by default', () => {

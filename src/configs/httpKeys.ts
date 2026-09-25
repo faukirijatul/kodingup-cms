@@ -1,3 +1,6 @@
+import type { ListCoursesQueryParams } from '@/types/course';
+import type { ListCourseSectionsQueryParams } from '@/types/courseSection';
+import type { ListMentorsQueryParams } from '@/types/mentor';
 import type { ListOrganizationsQueryParams } from '@/types/organization';
 import type {
   GetStudentAttendancesParams,
@@ -29,6 +32,53 @@ export const studentInvitationHttpKeys = {
     params
       ? ([...studentInvitationHttpKeys.all, 'list', params] as const)
       : ([...studentInvitationHttpKeys.all, 'list'] as const),
+};
+
+export const courseHttpKeys = {
+  all: ['courses'] as const,
+  listCourses: (params?: ListCoursesQueryParams) =>
+    params
+      ? ([...courseHttpKeys.all, 'list', params] as const)
+      : ([...courseHttpKeys.all, 'list'] as const),
+  getCourse: (courseId: string) => [...courseHttpKeys.all, courseId] as const,
+  getCourseTotals: (courseId: string) =>
+    [...courseHttpKeys.all, 'totals', courseId] as const,
+};
+
+export const courseSectionHttpKeys = {
+  all: ['courseSections'] as const,
+  listCourseSections: (params?: ListCourseSectionsQueryParams) =>
+    params
+      ? ([...courseSectionHttpKeys.all, 'list', params] as const)
+      : ([...courseSectionHttpKeys.all, 'list'] as const),
+  getCourseSection: (courseId: string, sectionPosition: string) =>
+    [...courseSectionHttpKeys.all, courseId, sectionPosition] as const,
+  getCourseSectionTotals: (courseId: string, sectionPosition: string) =>
+    [
+      ...courseSectionHttpKeys.all,
+      'totals',
+      courseId,
+      sectionPosition,
+    ] as const,
+};
+
+export const courseSectionModuleHttpKeys = {
+  all: ['courseSectionModules'] as const,
+  listCourseSectionModules: (params?: ListCourseSectionsQueryParams) =>
+    params
+      ? ([...courseSectionModuleHttpKeys.all, 'list', params] as const)
+      : ([...courseSectionModuleHttpKeys.all, 'list'] as const),
+  getCourseSectionModule: (courseId: string, sectionPosition: string) =>
+    [...courseSectionModuleHttpKeys.all, courseId, sectionPosition] as const,
+};
+
+export const mentorHttpKeys = {
+  all: ['mentors'] as const,
+  listMentors: (params?: ListMentorsQueryParams) =>
+    params
+      ? ([...mentorHttpKeys.all, 'list', params] as const)
+      : ([...mentorHttpKeys.all, 'list'] as const),
+  getMentor: (mentorId: string) => [...mentorHttpKeys.all, mentorId] as const,
 };
 
 export const organizationHttpKeys = {

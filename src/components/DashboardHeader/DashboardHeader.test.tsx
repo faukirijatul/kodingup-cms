@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { User } from 'firebase/auth';
-import { DashboardHeader, type BreadcrumbItem } from './DashboardHeader';
+import { DashboardHeader, type BreadcrumbItem } from '../DashboardHeader';
 import { useCurrentUser } from '@/hooks/useCurrentUser';
 import { HttpService } from '@/services/http';
 import { authHttpKeys } from '@/configs/httpKeys';

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { DataSelect, type SelectOption } from './DataSelect';
+import { DataSelect, type SelectOption } from '.';
 
 const mockOptions: SelectOption[] = [
   { value: 'org-1', label: 'Organization One' },

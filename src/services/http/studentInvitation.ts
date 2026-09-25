@@ -2,14 +2,14 @@ import { buildQueryString } from '@/lib/buildQueryString';
 import { HOST } from './constants';
 import { httpClient } from '@/lib/http';
 import type {
-  InviteStudentFormValues,
   InviteStudentResponse,
   ListStudentInvitationsQueryParams,
   ListStudentInvitationsResponse,
 } from '@/types/studentInvitation';
+import type { InviteStudentFormOutput } from '@/schemas/inviteStudent';
 
 export async function inviteStudent(
-  payload: InviteStudentFormValues,
+  payload: InviteStudentFormOutput,
 ): Promise<InviteStudentResponse> {
   const url = `${HOST}/v1/student-invitations`;
 

@@ -16,9 +16,3 @@ export interface InviteStudentResponse {
     link: string;
   };
 }
-
-export interface InviteStudentFormValues {
-  email: string;
-  organizationId: string | number;
-  message?: string;
-}

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { SegmentedControl } from './SegmentedControl';
+import { SegmentedControl } from '.';
 
 describe('SegmentedControl Component', () => {
   const mockSegments = [
