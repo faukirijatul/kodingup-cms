@@ -8,6 +8,7 @@ import { DashboardLayout } from '@/layouts/DashboardLayout';
 import { CoursesPage } from '@/pages/Course/CoursesPage';
 import { CourseDetailPage } from '@/pages/Course/CourseDetailPage';
 import { SectionDetailPage } from '@/pages/SectionDetailPage';
+import { SettingsPage } from '@/pages/SettingsPage';
 
 export function AppRouter() {
   return (
@@ -33,6 +34,8 @@ export function AppRouter() {
                 element={<SectionDetailPage />}
               />
             </Route>
+
+            <Route path="settings" element={<SettingsPage />} />
           </Route>
         </Route>
       </Routes>
