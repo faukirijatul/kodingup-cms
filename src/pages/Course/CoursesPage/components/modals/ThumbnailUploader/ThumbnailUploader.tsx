@@ -1,7 +1,7 @@
 import { Plus, Upload, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { useUpload } from '@/hooks/useUpload';
+import { useUpload } from '@/hooks/upload/useUpload';
 
 interface ThumbnailUploaderProps {
   value?: File | string | null;

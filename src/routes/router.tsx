@@ -9,6 +9,9 @@ import { CoursesPage } from '@/pages/Course/CoursesPage';
 import { CourseDetailPage } from '@/pages/Course/CourseDetailPage';
 import { SectionDetailPage } from '@/pages/SectionDetailPage';
 import { SettingsPage } from '@/pages/SettingsPage';
+import { OrganizationsPage } from '@/pages/OrganizationsPage';
+import { MentorsPage } from '@/pages/Mentor/MentorsPage';
+import { MentorFormPage } from '@/pages/Mentor/MentorFormPage';
 
 export function AppRouter() {
   return (
@@ -34,6 +37,13 @@ export function AppRouter() {
                 element={<SectionDetailPage />}
               />
             </Route>
+
+            <Route path="mentors">
+              <Route index element={<MentorsPage />} />
+              <Route path="form" element={<MentorFormPage />} />
+            </Route>
+
+            <Route path="organizations" element={<OrganizationsPage />} />
 
             <Route path="settings" element={<SettingsPage />} />
           </Route>

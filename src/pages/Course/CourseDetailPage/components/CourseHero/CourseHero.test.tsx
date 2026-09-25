@@ -79,7 +79,6 @@ describe('CourseHero', () => {
   };
 
   beforeEach(() => {
-    vi.clearAllMocks();
     (useGetCourse as unknown as ReturnType<typeof vi.fn>).mockReturnValue({
       data: mockCourseData,
       isLoading: false,

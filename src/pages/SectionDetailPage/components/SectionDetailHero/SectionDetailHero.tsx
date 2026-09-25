@@ -41,8 +41,6 @@ export function SectionDetailHero({
     },
   );
 
-  console.log(section, 'section');
-
   const { data: sectionTotals, isLoading: isSectionTotalsLoading } =
     useGetCourseSectionTotals(
       { courseId, sectionPosition },
@@ -50,8 +48,6 @@ export function SectionDetailHero({
         enabled: !!sectionPosition,
       },
     );
-
-  console.log(sectionTotals, 'sectionTotals');
 
   const { mutate: deleteSection, isPending: isDeleting } =
     useDeleteCourseSection({
