@@ -1,6 +1,7 @@
 import type { ListAssignmentsQueryParams } from '@/types/assignment';
 import type { ListCoursesQueryParams } from '@/types/course';
 import type { ListCourseSectionsQueryParams } from '@/types/courseSection';
+import type { ListLiveSessionsQueryParams } from '@/types/liveSession';
 import type { ListMentorsQueryParams } from '@/types/mentor';
 import type { ListOrganizationsQueryParams } from '@/types/organization';
 import type {
@@ -90,6 +91,16 @@ export const organizationHttpKeys = {
       : ([...organizationHttpKeys.all, 'list'] as const),
   getOrganization: (organizationId: string) =>
     [...organizationHttpKeys.all, organizationId] as const,
+};
+
+export const liveSessionHttpKeys = {
+  all: ['liveSessions'] as const,
+  listLiveSessions: (params?: ListLiveSessionsQueryParams) =>
+    params
+      ? ([...liveSessionHttpKeys.all, 'list', params] as const)
+      : ([...liveSessionHttpKeys.all, 'list'] as const),
+  getLiveSession: (liveSessionId: string) =>
+    [...liveSessionHttpKeys.all, liveSessionId] as const,
 };
 
 export const assignmentHttpKeys = {

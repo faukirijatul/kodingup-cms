@@ -15,6 +15,7 @@ import { MentorFormPage } from '@/pages/Mentor/MentorFormPage';
 import { AssignmentsPage } from '@/pages/Assignment/AssignmentsPage';
 import { AssignmentFormPage } from '@/pages/Assignment/AssignmentFormPage';
 import { AssignmentDetailPage } from '@/pages/Assignment/AssignmentDetailPage';
+import { LiveSessionsPage } from '@/pages/LiveSessionsPage';
 
 export function AppRouter() {
   return (
@@ -40,6 +41,8 @@ export function AppRouter() {
                 element={<SectionDetailPage />}
               />
             </Route>
+
+            <Route path="live-sessions" element={<LiveSessionsPage />} />
 
             <Route path="assignments">
               <Route index element={<AssignmentsPage />} />
