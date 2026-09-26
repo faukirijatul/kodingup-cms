@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import { MentorFormPage } from './MentorFormPage';
 
@@ -35,10 +35,6 @@ vi.mock('./components/MentorForm', () => ({
 }));
 
 describe('MentorFormPage Component', () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-  });
-
   it('renders in create mode when no mentorId search param is present', () => {
     render(
       <MemoryRouter initialEntries={['/mentors/form']}>

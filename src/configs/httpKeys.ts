@@ -1,3 +1,4 @@
+import type { ListAssignmentsQueryParams } from '@/types/assignment';
 import type { ListCoursesQueryParams } from '@/types/course';
 import type { ListCourseSectionsQueryParams } from '@/types/courseSection';
 import type { ListMentorsQueryParams } from '@/types/mentor';
@@ -89,4 +90,14 @@ export const organizationHttpKeys = {
       : ([...organizationHttpKeys.all, 'list'] as const),
   getOrganization: (organizationId: string) =>
     [...organizationHttpKeys.all, organizationId] as const,
+};
+
+export const assignmentHttpKeys = {
+  all: ['assignments'] as const,
+  listAssignments: (params?: ListAssignmentsQueryParams) =>
+    params
+      ? ([...assignmentHttpKeys.all, 'list', params] as const)
+      : ([...assignmentHttpKeys.all, 'list'] as const),
+  getAssignment: (assignmentId: string) =>
+    [...assignmentHttpKeys.all, assignmentId] as const,
 };

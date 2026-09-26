@@ -6,6 +6,7 @@ import * as courseSectionService from './courseSection';
 import * as courseSectionModuleService from './courseSectionModule';
 import * as mentorService from './mentor';
 import * as organizationService from './organization';
+import * as assignmentService from './assignment';
 import * as imageKitService from './imageKit';
 
 export const HttpService = {
@@ -17,5 +18,6 @@ export const HttpService = {
   ...courseSectionModuleService,
   ...mentorService,
   ...organizationService,
+  ...assignmentService,
   ...imageKitService,
 };

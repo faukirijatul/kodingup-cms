@@ -12,6 +12,9 @@ import { SettingsPage } from '@/pages/SettingsPage';
 import { OrganizationsPage } from '@/pages/OrganizationsPage';
 import { MentorsPage } from '@/pages/Mentor/MentorsPage';
 import { MentorFormPage } from '@/pages/Mentor/MentorFormPage';
+import { AssignmentsPage } from '@/pages/Assignment/AssignmentsPage';
+import { AssignmentFormPage } from '@/pages/Assignment/AssignmentFormPage';
+import { AssignmentDetailPage } from '@/pages/Assignment/AssignmentDetailPage';
 
 export function AppRouter() {
   return (
@@ -36,6 +39,12 @@ export function AppRouter() {
                 path=":courseId/sections/:sectionPosition"
                 element={<SectionDetailPage />}
               />
+            </Route>
+
+            <Route path="assignments">
+              <Route index element={<AssignmentsPage />} />
+              <Route path="form" element={<AssignmentFormPage />} />
+              <Route path=":assignmentId" element={<AssignmentDetailPage />} />
             </Route>
 
             <Route path="mentors">
