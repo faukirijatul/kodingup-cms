@@ -360,8 +360,6 @@ describe('LiveSessionTableFilters Component', () => {
   };
 
   beforeEach(() => {
-    vi.clearAllMocks();
-
     vi.mocked(useOrganizationOptions).mockReturnValue({
       organizationOptions: mockOrgOptions,
       page: 1,

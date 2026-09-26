@@ -162,7 +162,6 @@ describe('CourseHero', () => {
     const deleteButton = screen.getByRole('button', { name: /delete course/i });
     await user.click(deleteButton);
 
-    // Targetkan elemen dialog modal untuk menghindari duplikasi teks dengan tombol di hero
     const dialog = screen.getByRole('dialog');
     expect(within(dialog).getByText('Delete Course')).toBeInTheDocument();
 

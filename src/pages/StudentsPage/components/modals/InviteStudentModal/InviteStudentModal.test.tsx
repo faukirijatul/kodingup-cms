@@ -164,7 +164,7 @@ describe('InviteStudentModal', () => {
       await waitFor(() => {
         expect(mockMutate).toHaveBeenCalledWith({
           email: 'student@example.com',
-          organizationId: 1, // Berhasil di-transform Zod dari string "1" ke number 1
+          organizationId: 1,
         });
       });
     });

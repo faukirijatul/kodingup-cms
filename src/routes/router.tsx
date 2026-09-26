@@ -16,6 +16,7 @@ import { AssignmentsPage } from '@/pages/Assignment/AssignmentsPage';
 import { AssignmentFormPage } from '@/pages/Assignment/AssignmentFormPage';
 import { AssignmentDetailPage } from '@/pages/Assignment/AssignmentDetailPage';
 import { LiveSessionsPage } from '@/pages/LiveSessionsPage';
+import { SchedulePage } from '@/pages/SchedulePage';
 
 export function AppRouter() {
   return (
@@ -41,6 +42,8 @@ export function AppRouter() {
                 element={<SectionDetailPage />}
               />
             </Route>
+
+            <Route path="schedule" element={<SchedulePage />} />
 
             <Route path="live-sessions" element={<LiveSessionsPage />} />
 
